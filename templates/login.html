@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form action="submit" method="POST"> {% csrf_token %}
+        <div id="txtL">
+            <h1><img src="{%static 'agenda.png' %}" id="logo">Sua Agenda Aqui</h1>
+            <label>Usuario:</label><br>
+            <input type="text"  name="username">
+            <label><br>Senha:</label><br>
+            <input type="password" name="password">
+            <br><button type="submit">Entrar</button>
+        </div>
+    </form>
+    <div id="erro" align="center">
+        {%for message in messages%}
+            <strong></br>Erro: </strong>{{message}}
+        {%endfor%}
+    </div>
+</body>
+</html>

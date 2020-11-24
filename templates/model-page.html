@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt">
+    {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<head>
+    {% include 'model-header.html' %}
+</head>
+<body>
+    <div id="txtU">
+        <h1><img src="{%static 'agenda.png' %}" id="logo">Sua Agenda Aqui</h1>
+    {% block content %}  {% endblock %}
+    {% include 'model-footer.html' %}
+    </div>
+</body>
+</html>
